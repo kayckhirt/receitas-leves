@@ -1,0 +1,75 @@
+.food-card-component {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  }
+
+.food-card{
+    width: 300px;
+    border: 2px solid #fa6400;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.4s;
+    margin: 1%;
+    box-shadow: 1px 1px 5px #3f5735 ;
+}
+.food-card:hover{
+    border: 2px solid #3f5735;
+    cursor: pointer;
+    transition: 0.4s;
+
+}
+.food-info p{
+  margin-left: 5px;
+  padding: 5px;
+}
+.image-card{
+  width: 100%;
+}
+.search {
+    width: 60%;
+    display: flex;
+    justify-self: center;
+  }
+  
+.searchTerm {
+    width: 100%;
+    border: 3px solid #ff914d;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #3b5431;
+    font-size: 20px;
+  }
+  
+.searchTerm:focus{
+    color: black;
+    font-size: 20px;
+  }
+  
+.searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid#ff914d;
+    background: #ff914d;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+.wrap {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+  }
+.searchTerm::-webkit-input-placeholder{
+    font-size: 20px;
+  }
+
+.lupa{
+    width: 18px;
+  }

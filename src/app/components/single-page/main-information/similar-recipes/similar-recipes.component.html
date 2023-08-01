@@ -1,0 +1,16 @@
+<h4 class="title">Receitas similares:</h4>
+    <div *ngIf="similarRecipes; else noRecipe" class="container-similar">
+        <div routerLink="/recipe" [queryParams]="{id: recipe.id}" (click)="reloadPage()" class="cardRecipe p-3"
+          *ngFor="let recipe of similarRecipes">
+          <p><strong><u>Nome da receita:</u> </strong> {{recipe.title}}</p>
+          <p><strong><u>Tempo de preparo:</u> </strong> {{recipe.readyInMinutes}} minutos</p>
+        </div>
+      </div>
+
+
+<div *ngIf="loading" class="lds-heart" role="status">
+</div>
+
+<ng-template #noRecipe>
+    <p class="no"><strong>Sem receitas semalhantes no momento</strong></p>
+</ng-template>

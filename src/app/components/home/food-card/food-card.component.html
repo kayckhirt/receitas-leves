@@ -1,0 +1,32 @@
+<main class="food-card-component">
+    <div routerLink="/recipe" [queryParams]="{id: food.id}" *ngFor="let food of foods" class="food-card">
+        <img src="{{food.image}}" alt="{{food.title}}" class="image-card" *ngIf="food.image; else noImage">
+        <div class="food-info">
+            <p>Nome: <strong>{{food.title}}</strong></p>
+            <p>Tempo de preparo: <strong>{{food.readyInMinutes}}</strong> minutos</p>
+            <p>Vegetariano:
+                <span *ngIf="food.vegetarian === true; else negativeResponse">Sim</span>
+            </p>
+            <p>Vegano:<span *ngIf="food.vegan === true; else negativeResponse">Sim</span>
+            </p>
+        </div>
+    </div>
+</main>
+<div *ngIf="loading" role="status" class="lds-heart"></div>
+<div *ngIf="loadingMore" role="status" class="lds-heart"></div>
+<div class="cont-btn">
+<button (click)="loadMore()" *ngIf="foods?.length < 9; else buttonDisabled" type="button"
+  class="btn">Carregar mais
+</button>
+</div>
+
+<ng-template #noImage>
+    <p class=""><strong><u>Sem imagem no momento</u></strong></p>
+</ng-template>
+<ng-template #negativeResponse>
+    <strong>Não</strong>
+</ng-template>
+<ng-template #buttonDisabled>
+    <button type="button" class="btn disabled">Carregar mais</button>
+</ng-template>
+

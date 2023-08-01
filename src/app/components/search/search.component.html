@@ -1,0 +1,26 @@
+<div class="wrap">
+    <div class="search">
+    <input class="searchTerm" type="text" name="search" placeholder="Pesquise por suas receitas" [(ngModel)]="query"
+      (keydown.enter)="getSearch()" />
+    <button (click)="getSearch()" class="searchButton">
+        <img src="assets/lupa.png" alt="lupa de busca" class="lupa">
+    </button>
+  </div>
+</div>
+  <div class="food-card-component">
+    <div routerLink="/recipe" [queryParams]="{id: food.id}" class=" food-card" *ngFor="let food of foods">
+      <img *ngIf="food.image; else noImage" src={{food.image}} alt={{food.title}} class="image-card">
+      <p class="food-info">
+        <strong>
+          Nome: {{food.title}}
+        </strong>
+      </p>
+    </div>
+  </div>
+  
+  <div *ngIf="loading" class="lds-heart" role="status">
+</div>
+  
+  <ng-template #noImage>
+    <p class=""><strong>Sem imagem no momento</strong></p>
+  </ng-template>

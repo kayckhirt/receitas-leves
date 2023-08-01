@@ -1,0 +1,40 @@
+<div class="big-card">
+    <div class="food-info">
+        <p class="title"><strong>{{food.title}}</strong></p>
+        <p><strong>Tempo de preparo: </strong>{{food.readyInMinutes}} minutos</p>
+        <p><strong>Serve:</strong> {{food.servings}} pessoas</p>
+        <p><strong>Preço padrão de venda:</strong> U${{food.pricePerServing}}</p>
+        <p><strong>Vegetariano:</strong>
+        <span *ngIf="food.vegetarian === true; else negativeResponse">Sim</span></p>
+        <p><strong>Vegano:</strong>
+            <span *ngIf="food.vegan === true; else negativeResponse">Sim</span></p>
+        <p><strong>Saudável:</strong>
+            <span *ngIf="food.veryHealthy === true; else negativeResponse">Sim</span></p>
+        <p>
+            <strong>Gostou da receita?</strong>
+            <span><a href={{food.sourceUrl}} target="_blank">Clique aqui</a> e faça ela!</span>
+            </p>
+    </div>
+    <div class="container-img">
+        <img src={{food.image}} alt={{food.title}} class="foodImg" *ngIf='food.image; else noImage'>
+      </div>
+</div>
+
+<app-similar-recipes [recipeIdSimilar]="recipeIdSimilar"></app-similar-recipes>
+<div *ngIf="loading" class="lds-heart" role="status">
+</div>
+
+<ng-template #negativeResponse>
+    Não
+  </ng-template>
+<ng-template #noRecipe>
+    <p class="no"><strong>Sem receitas semelhantes no momento</strong></p>
+</ng-template>
+  
+<ng-template #noImage>
+    <p class="no">
+      <strong>
+        <u>Sem imagem no momento</u>
+      </strong>
+    </p>
+</ng-template>

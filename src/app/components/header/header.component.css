@@ -1,0 +1,24 @@
+.headerComponent{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 1%;
+    background-color: #e0e8f5;
+}
+
+.logoComponent{
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+    color: #ff914d;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+.logoHeader {
+    margin-top: -20px;
+    width: 170px;
+}

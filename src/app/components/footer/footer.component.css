@@ -1,0 +1,10 @@
+.footerComponent{
+    display: flex;
+    justify-content: center;
+    color: #3b5431;
+    font-weight: bold;
+    font-size: 15px;
+}
+.link {
+    color: #3b5431;
+}

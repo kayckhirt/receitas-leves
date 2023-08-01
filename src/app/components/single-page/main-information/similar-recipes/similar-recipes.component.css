@@ -1,0 +1,31 @@
+.container-similar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.center{
+    display: flex;
+    justify-content: center;
+}
+.cardRecipe {
+    width: 350px;
+    cursor: pointer;
+    border: 2px solid #ff914d;
+    border-radius: 15px;
+    transition: 0.4s;
+    margin: 5px;
+    padding: 5px;
+    box-shadow: 1px 1px 5px #3f5735 ;
+  }
+  .cardRecipe:hover{
+    border: 2px solid #3f5735;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+.title{
+    text-align: center; 
+    margin-top: 8px;
+    margin-bottom: 5px;
+    color: #ff914d;
+    font-weight: bold;
+}
